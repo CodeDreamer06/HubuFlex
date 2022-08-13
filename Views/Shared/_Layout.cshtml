@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - HubuFlex</title>
+    <link rel="stylesheet" href="~/css/tailwind.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+</head>
+<body onload="loadPage()">
+    <!-- Spinner -->
+    <div class="top-gradient container-fluid"></div>
+    <div class="spinner-background"></div>
+    <div class="spinner"><div></div><div></div><div></div><div></div></div>
+
+    <!-- Hero -->
+    <div class="hero">
+        <nav class="absolute flex items-center justify-between w-5/6">
+            <p class="font-extralight text-white text-3xl">My Wishlist</p>
+            <button class="cta m-10 py-4 px-12 text-2xl text-white flex justify-between text-center">
+                <img src="~/images/Plus Math.png" class="mr-4" alt="plus">
+                <p>Create</p>
+            </button>
+        </nav>
+        <!-- Search box -->
+        <div class="m-auto">
+            <img src="~/images/Logo.png" alt="Logo" class="m-auto">
+            <input type="text" placeholder="What's up for today?" class="search-box inline py-7 px-10"/>
+        </div>
+
+        <!-- Search box with autocomplete -->
+        <!-- <div class="m-auto">
+            <img src="images/Logo.png" alt="Logo" class="m-auto">
+            <div>
+                <input type="text" placeholder="What's up for today?" class="search-box-autocomplete inline py-7 px-10 text-3xl font-black"/>
+                <div class="auto-complete list-none text-2xl font-semibold">
+                    <li>The Amazing Spider Man</li>
+                    <li>Spider Man: Homecoming</li>
+                    <li>Spider Man</li>
+                    <li>Spider Man 2</li>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="flex mx-52 items-center mt-44">
+        <img src="images/C-sharp icon.png" alt="C-sharp logo">
+        <p class="text-3xl ml-10 font-semibold">Powered by C# ASP.NET</p>
+    </footer>
+
+    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
